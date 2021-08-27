@@ -8,7 +8,8 @@ export class OnhoverDirective {
 
   constructor(private elem:ElementRef) {}
     @HostListener('mouseover') onOver() {
-      this.elem.nativeElement.style.backgroundColor = '';
+      this.elem.nativeElement.style.backgroundColor = 'black';
+      this.elem.nativeElement.style.color="white"
     }
    
 
