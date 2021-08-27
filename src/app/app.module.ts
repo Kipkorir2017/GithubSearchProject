@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OnhoverDirective } from './onhover.directive';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { OnhoverDirective } from './onhover.directive';
     NavbarComponent,
     NotFoundComponent,
     ProfileComponent,
-    OnhoverDirective
+    OnhoverDirective,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
