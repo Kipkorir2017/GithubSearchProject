@@ -7,8 +7,8 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
  
   { path: '', component: LandingComponent},
-  { path: 'PROFILE', component: ProfileComponent },
-  { path: '', redirectTo:"/PROFILE", pathMatch:"full"},
+  { path: 'HOME', component: ProfileComponent },
+  { path: '', redirectTo:"/HOME", pathMatch:"full"},
   { path:'**', component:NotFoundComponent},
 ];
 
