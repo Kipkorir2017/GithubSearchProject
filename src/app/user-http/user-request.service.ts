@@ -10,16 +10,16 @@ export class UserRequestService {
 
   user: User;
   repo: Repository;
-
-  username: string|any;
+  username: string | any;
   newUserDetails: any = []
+
   constructor(private http: HttpClient) {
-    this.user = new User( "","", 0, 0, "", "", "", new Date())
-    this.repo = new Repository("", "", "", new Date())
+    this.user = new User("", "", 0, 0, "", "", "", new Date());
+    this.repo = new Repository("", "", "", new Date());
   }
   showDetails(username: string) {
     interface ApiResponse {
-      login:string,
+      login: string,
       avatar_url: string,
       followers: number,
       following: number,
@@ -48,11 +48,11 @@ export class UserRequestService {
     })
     return promise;
   }
-
-  showMyRepo(username: string) {
-  }
-  ngOnInit() { }
-    
-  }
   
+
+
+  ngOnInit() { }
+
+}
+
 

@@ -9,24 +9,29 @@ import { User } from '../user';
 })
 export class ViewProfileRequestService {
 
-  user:User;
-  repo:Repository;
-  username:string|any;
+  user: User;
+  repo: Repository;
+  username: string | any;
 
-  constructor(private http:HttpClient) { 
-    this.user=new User("","",0,0,"","","",new Date());
-    this.repo=new Repository("","","",new Date());
+  constructor(private http: HttpClient) {
+    this.user = new User("", "", 0, 0, "", "", "", new Date());
+    this.repo = new Repository("", "", "", new Date());
   }
-  private token = environment.ApiKey;
-  
+
 
   getProfileData(username: string) {
-    return this.http.get(
-      `https://api.github.com/users/${username}?access_token=${environment.ApiKey}`
-    );
+    return this.http.get("https://api.github.com/users/" + username + "?access_token=" + environment.ApiKey)
+      .pipe(((response: any) => response));
+  }
+  getRepos(username: string) {
+    return this.http.get("https://api.github.com/users/" + username + "?access_token=" + environment.ApiKey)
+      .pipe(((response: any) => response));
   }
   findUser(username: string) {
     interface ApiResponse {
+
+      //user
+      login: string,
       avatar_url: string,
       followers: number,
       following: number,
@@ -34,15 +39,17 @@ export class ViewProfileRequestService {
       bio: string,
       location: string,
       created_at: Date
-
+      //repository
       name: string
       description: string,
       html_url: string,
       updated_at: Date
     }
+
     let promise = new Promise<void>((resolve, reject) => {
       this.http.get<ApiResponse>(`https://api.github.com/users/${username}?`)
         .toPromise().then(response => {
+          this.user.login = response.login
           this.user.avatar_url = response.avatar_url
           this.user.followers = response.followers
           this.user.following = response.following

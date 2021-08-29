@@ -20,23 +20,23 @@ export class ProfileComponent implements OnInit {
   following: any;
   
  
-  constructor(private showProfile: ViewProfileRequestService) {
-    this.showProfile = showProfile;
-    this.user=this.showProfile.user;
-    this.repos = this.showProfile.repo;
+  constructor(private viewProfile: ViewProfileRequestService) {
+    this.viewProfile = viewProfile;
+    this.user=this.viewProfile.user;
+    this.repos = this.viewProfile.repo;
   }
 
   search(username: string) {
-    this.showProfile.findUser(username);
-    this.showProfile.getProfileData(username)
+    this.viewProfile.findUser(username);
+    this.viewProfile.getProfileData(username)
       .subscribe(profile => {
 
         this.userProfile = profile;
-      }, error => {
-        (error)
+      }, (error) => {
+       console.log ("cannot find what you want", error)
       });
     this.username = '';
-    this.showProfile.getProfileData(username)
+    this.viewProfile. getRepos(username)
       .subscribe(repos => {
         this.repos = repos;
         console.log(repos)

@@ -29,7 +29,8 @@ import { ViewProfileRequestService } from './viewProfile-http/view-profile-reque
     FormsModule,
     HttpClientModule,
   ],
-  providers: [UserRequestService,
+  providers: [
+    UserRequestService,
     ViewProfileRequestService ],
   bootstrap: [AppComponent]
 })

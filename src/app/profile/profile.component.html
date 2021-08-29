@@ -5,7 +5,7 @@
             <hr>
             <div id="profile"><img src="{{user.avatar_url}}" alt=" user profile pic"> </div> <br>
             <div id="bio">{{user.bio}}</div>
-            <div>Location:{{user.location}}</div>
+            <p>Location:{{user.location}}</p>
             <p>{{user.followers}} Followers </p>
             <p>{{user.following}} Following</p>
         </div>
@@ -14,23 +14,20 @@
             <hr>
             <div>
                 <form action="">
-                    <input type="text" id="search" placeholder="Search Username">
+                    <input type="text" id="search" (click)="search(username.value)" [(ngModel)]="username" placeholder="Search Username">
                     <button type="submit" (click)="search(username.value)" id="btn">search</button>
                 </form>
             </div>
 
             <div *ngFor="let repo of repos; index as i">
-                <div class="card shadow-md p-3 mb-3 bg-body rounded">
-                    <h4 style="color:goldenrod">{{ repo.name }} <i *ngIf="repo.fork"
-                            class="fas fa-code-branch fa-xs"></i> <span
-                            style="font-size:12px; float:right; color:navy; background-color: goldenrod"
-                            class="badge">{{ repo.language }}</span></h4>
+                <div >
+                    <h4 >{{ repo.name }} </h4>
+                    <h4> {{ repo.language }}</h4>
                     <p>{{ repo.description }}</p>
-                    <div class="d-flex justify-content-between">
+                    <div>
 
                         <a href="{{ repo.html_url }}" target="_blank">
-                            <button appOnhover style="color: white; background-color:#1a2555" class="btn btn-info">View
-                                on GitHub <i class="fab fa-github"></i></button>
+                            <button >View<i class="fab fa-github"></i></button>
                         </a>
                         <small style="margin-top: 6%"><span class="text-muted">Date modified:</span> {{ repo.updated_at|date }}</small>
                     </div>

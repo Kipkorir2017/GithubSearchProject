@@ -1,4 +1,4 @@
-# GitSearch
+# GitHub Search
 
 ## Author
 Benjamin Kipkorir Tonui

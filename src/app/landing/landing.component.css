@@ -1,11 +1,19 @@
 
 .landing{
     background-color:white;
-    padding-bottom: 80%;
+    padding-bottom: 20%;
     padding-top: 0px;
     text-align: center;
 }
 body{
     font-family: 'Hina Mincho', serif;
     font-size: 25px;
+    
+}
+.sect1{
+    background-color: gray;
+    
+}
+.sect3{
+    background-color: gray;
 }
