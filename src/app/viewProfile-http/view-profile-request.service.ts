@@ -17,12 +17,12 @@ export class ViewProfileRequestService {
     this.user=new User("","",0,0,"","","",new Date());
     this.repo=new Repository("","","",new Date());
   }
-  private ApiKey = environment.ApiKey;
+  private token = environment.ApiKey;
   
 
   getProfileData(username: string) {
     return this.http.get(
-      `https://api.github.com/users/${username}?access_Apikey=${environment.ApiKey}`
+      `https://api.github.com/users/${username}?access_token=${environment.ApiKey}`
     );
   }
   findUser(username: string) {

@@ -10,6 +10,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { OnhoverDirective } from './onhover.directive';
 import { DateCountPipe } from './date-count.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { UserRequestService } from './user-http/user-request.service';
+import { ViewProfileRequestService } from './viewProfile-http/view-profile-request.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [UserRequestService,
+    ViewProfileRequestService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

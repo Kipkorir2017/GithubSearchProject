@@ -1,5 +1,11 @@
 # GitSearch
 
+## Author
+Benjamin Kipkorir Tonui
+## Description
+This is Angular CLi Application that uses Github API,to show  individual github account profile, and repositories
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
 ## Development server
@@ -21,6 +27,24 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Setup/Installation Requirements
+Requires internet to clone project
+Use terminal 
+git clone project to your laptop
+open with your Favorite code Editor
+ng serve -o to open the Application
+
+## Technology Used
+1. HTML5
+2. CSS
+3. Angular CLI(TS)
+4. Bootstrap
+
+## LICENSE
+MIT LICENSE <a></a>
+
+copyright &#169; 2021 Benjamin Kipkorir
 
 ## Further help
 
