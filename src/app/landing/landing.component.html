@@ -12,66 +12,101 @@
 </head>
 
 <body>
-    <div class="container-fluid " class="landing">
-        <div>
-            <h2 style="font-weight: bold;">{{ title }}</h2>
-        </div>
-        <hr>
+    <section>
+        <div class="container-fluid " class="landing">
+            <div>
+                <h2 style="font-weight: bold;">{{ title }}</h2>
+            </div>
+            <hr>
 
-        <div class="row">
-            <div>
-            </div>
-            <div>
-                <div>
-                    <h5 style="font-weight: 900;">Welcome to GitHub search Application</h5>
-                </div>
-            </div>
-            <div>
-
-            </div>
-        </div>
-        <div class="input">
-            <input type="text" name="username" id="" class="form-control" [(ngModel)]="username"
-                placeholder="Search UserName"> <br>
-            <button class="btn btn-secondary" (click)="getProfile();getRepository()" id="btn">search</button>
-        </div>
-        <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h4>Profile</h4>
-                    <hr>
-                    <div *ngIf="profiles.bio">
-                        <div id="profile"><img src={{profiles.avatar_url}} alt=""> </div> <br>
-                        <div id="bio">
-                            <p>Proffession:<span style="font-weight: bold;">{{profiles.bio}}</span></p>
-                        </div>
-                        <p>Location:<span style="font-weight: bold;">{{profiles.location}} </span></p>
-                        <p><span style="font-weight: bold;">{{profiles.followers}}</span> Followers &nbsp;<span
-                                style="font-weight: bold;">{{profiles.following}} </span><span> Following</span> </p>
+                <div>
+                </div>
+                <div>
+                    <div>
+                        <h5 style="font-weight: 900;">Welcome to GitHub search Application</h5>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <h4>GitHub User's Repositories </h4>
-                    <hr>
-                    <div class="card text-center" *ngFor="let rep of repo">
+                <div>
 
-                        <div class="card-body">
-                            <h5 class="card-title" style="color:tomato; font-size: 25px;">{{ rep.name }} </h5>
-                            <p class="card-text">{{rep.description}}</p>
-                            <a href="{{rep.html_url}}" class="btn btn-success">view</a> &nbsp;{{rep.forks_count}} Forks
+                </div>
+            </div>
+            <div class="input">
+                <input type="text" name="username" id="" class="form-control" [(ngModel)]="username"
+                    placeholder="Search UserName"> <br>
+                <button class="btn btn-secondary" (click)="getProfile();getRepository()" id="btn">search</button>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>Profile</h4>
+                        <hr>
+                        <div *ngIf="profiles.bio">
+                            <div id="profile"><img src={{profiles.avatar_url}} alt=""> </div> <br>
+                            <p>Name: <Span style="font-weight: bold;">{{profiles.name}}</Span></p>
+                            <div id="bio">
+                                <p>Proffession:<span style="font-weight: bold;">{{profiles.bio}}</span></p>
+                            </div>
+                            <p>Location:<span style="font-weight: bold;">{{profiles.location}} </span></p>
+                            <p><span style="font-weight: bold;">{{profiles.followers}}</span> Followers &nbsp;<span
+                                    style="font-weight: bold;">{{profiles.following}} </span><span> Following</span>
+                            </p>
                         </div>
-                        <span>{{rep.public_repos}}</span>
-                        <div class="card text-muted">
-                            Date Modified: {{rep.updated_at|date}}
+                    </div>
+                    <div class="col-md-8">
+                        <h4>GitHub User's Repositories </h4>
+                        <hr>
+                        <div class="card text-center" *ngFor="let rep of repo">
+
+                            <div class="card-body">
+                                <h5 class="card-title" style="color:tomato; font-size: 25px;">{{ rep.name }} </h5>
+                                <p class="card-text">{{rep.description}}</p>
+                                <a href="{{rep.html_url}}" class="btn btn-success">view</a> &nbsp;{{rep.forks_count}}
+                                Forks
+                            </div>
+                            <span>{{rep.public_repos}}</span>
+                            <div class="card text-muted">
+                                Date Modified: {{rep.updated_at|date}}
+                            </div>
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
+            <!-- Footer -->
+            <div class="footer bg-secondary">
+                <footer class="page-footer font-medium black">
 
+                    <!-- Copyright -->
+                    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                        <a> Benjamin Kipkorir</a>
+                    </div>
+                    <div>
+                        <!-- <i class="fab fa-facebook-f"></i> -->
+
+                        <!-- Twitter -->
+                        <!-- <i class="fab fa-twitter"></i> -->
+
+                        <!-- Google -->
+                        <!-- <i class="fab fa-google"></i> -->
+
+                        <!-- Instagram -->
+                        <!-- <i class="fab fa-instagram"></i> -->
+
+                        <!-- Linkedin -->
+                        <!-- <i class="fab fa-linkedin-in"></i> -->
+
+                        <!-- Pinterest -->
+                        <!-- <i class="fab fa-pinterest"></i> -->
+                    </div>
+                    <!-- Copyright -->
+
+                </footer>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 
 </html>

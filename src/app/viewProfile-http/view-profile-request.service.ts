@@ -11,7 +11,7 @@ export class ViewProfileRequestService {
 
   username: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
 
   getProfileData(username: any) {

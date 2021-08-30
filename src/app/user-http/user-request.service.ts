@@ -11,18 +11,18 @@ export class UserRequestService {
 
   repo!: Repository;
   username: string | any;
- 
+
 
   constructor(private http: HttpClient) {
-    
+
   }
-   
+
   getRepos(username: any) {
     return this.http.get("https://api.github.com/users/" + username + "/repos?access_token=" + environment.ApiKey)
       .pipe(((response: any) => response));
   }
- 
-  
+
+
 
 
   ngOnInit() { }

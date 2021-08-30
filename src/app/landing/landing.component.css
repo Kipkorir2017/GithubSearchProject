@@ -8,6 +8,8 @@
 body{
     font-family: 'Hina Mincho', serif;
     font-size: 18px;
+    background-attachment: hsl(0, 2%, 82%);
+    
     
 }
 .sect1{
@@ -26,5 +28,10 @@ img{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+
+}
+.footer{
+ background-color:gray;
+ padding-bottom: 250px;
 
 }

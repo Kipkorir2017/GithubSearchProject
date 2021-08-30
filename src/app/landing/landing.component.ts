@@ -9,33 +9,32 @@ import { ViewProfileRequestService } from '../viewProfile-http/view-profile-requ
 })
 export class LandingComponent implements OnInit {
   title = 'GitHub Search';
-  name!:any
-  
+
   username !: string;
-  profiles : any;
-  repo : any;
-  
-  constructor(private viewProfile  :ViewProfileRequestService, private repository:UserRequestService  ) { };
+  profiles: any;
+  repo: any;
+
+  constructor(private viewProfile: ViewProfileRequestService, private repository: UserRequestService) { };
   getProfile() {
     this.viewProfile.getProfileData(this.username).subscribe((response) => {
       console.log("We are picking up some response", response)
       return this.profiles = response;
     },
-    (error) =>console.log("Picking and error on fetching user profile data", error)
+      (error) => console.log("Picking and error on fetching user profile data", error)
     );
   }
-  
-  getRepository(){
-    this.repository.getRepos(this.username).subscribe((data) =>{
+
+  getRepository() {
+    this.repository.getRepos(this.username).subscribe((data) => {
       console.log(data)
       return this.repo = data;
     },
       (error) => console.log("Picking and error on fetching user profile data", error)
     )
   };
-  ngOnInit() : void {
-    
-    }
+  ngOnInit(): void {
+
+  }
 
 
 
