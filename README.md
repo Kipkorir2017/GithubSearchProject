@@ -42,7 +42,7 @@ ng serve -o to open the Application
 4. Bootstrap
 
 ## LICENSE
-MIT LICENSE <a></a>
+MIT LICENSE <a>https://github.com/Kipkorir2017/GithubSearchProject/blob/master/LICENSE</a>
 
 copyright &#169; 2021 Benjamin Kipkorir
 
